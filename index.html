@@ -1,0 +1,1260 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sijil Tamat Sekolah Rendah</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f3f6fa;color:#172b40;font:15px/1.5 Arial,sans-serif}
+header{padding:12px 24px;background:#103653;color:white;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+h1{font-size:19px;margin:0}
+h2{font-size:19px;margin:0 0 14px}
+nav{display:flex;gap:4px;padding:8px 24px;background:#fff;border-bottom:1px solid #d9e2ea;flex-wrap:wrap}
+nav button{background:transparent;color:#103653;margin:0}
+nav button.active{background:#103653;color:#fff}
+button.ghost{background:#e4edf4;color:#103653}
+details{margin:14px 0}
+summary{cursor:pointer;color:#17677d;font-weight:bold;padding:6px 0}
+.no-print p{color:#536675;margin:8px 0}
+main{max-width:1250px;margin:auto;padding:20px}
+.page{background:white;padding:24px;border-radius:10px}
+button{background:#17677d;color:white;border:0;border-radius:5px;padding:10px 15px;cursor:pointer;margin:4px}
+button:disabled{opacity:.5;cursor:wait}
+input,select,textarea{font:inherit;padding:9px;border:1px solid #98aabb;border-radius:4px;width:100%;background:white;color:#142c41}
+label{display:block;margin:8px 0}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:4px 14px;align-items:start}
+.form-grid.wide{grid-template-columns:repeat(auto-fill,minmax(380px,1fr))}
+.form-grid label:has(#e_nama){grid-column:span 2}
+.form-grid label{font-size:13px;color:#42566a;margin:6px 0}
+.form-grid input,.form-grid select,.form-grid textarea{margin-top:3px;font-size:15px}
+textarea{resize:vertical}
+h4{margin:18px 0 2px;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:#17677d;border-bottom:1px solid #d9e2ea;padding-bottom:4px}
+.actions{margin-top:14px}
+#editor:not(:empty),#bulk:not(:empty){border-top:2px solid #103653;padding-top:14px}
+#editor h3,#bulk h3{margin:0 0 2px}
+.toolbar{display:flex;gap:10px;align-items:end;flex-wrap:wrap}
+.toolbar label{flex:1;min-width:160px}
+.scroll{overflow:auto;max-height:530px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid #cbd5df;padding:9px;text-align:left;white-space:pre-wrap;vertical-align:top}
+th{background:#e7f0f6;position:sticky;top:0}
+td input[type=checkbox]{width:20px}
+#status:empty{display:none}
+#login{position:fixed;inset:0;background:#f3f6fa;display:flex;align-items:center;justify-content:center;z-index:50;padding:16px}
+#login[hidden]{display:none}
+#login form{background:#fff;padding:28px;border-radius:10px;width:100%;max-width:360px;box-shadow:0 2px 16px #c9d4de}
+#login h1{color:#103653;margin:0 0 4px}
+#login p{color:#536675;margin:0 0 16px;font-size:14px}
+#login button{width:100%;margin:12px 0 0;padding:12px}
+#loginError{color:#a12519;font-size:14px;min-height:20px;margin:8px 0 0}
+header .spacer{flex:1}
+header button.ghost{background:transparent;color:#fff;border:1px solid #6d8aa3}
+.logo-preview{height:56px;max-width:140px;object-fit:contain;vertical-align:middle;margin-right:8px}
+small{color:#8494a3}
+#status{margin:10px 24px 0;padding:6px 10px;border-left:3px solid #17677d;white-space:pre-wrap;font-size:13px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.card{padding:20px;background:#eaf3f5;border-radius:8px}
+.card strong{display:block;font-size:28px}
+footer{padding:14px;text-align:center;color:#8494a3;font-size:12px}
+#editor,#bulk{margin-top:20px}
+#printWarnings{color:#a12519;white-space:pre-wrap}
+.certificate{width:210mm;height:297mm;padding:12mm 18mm;background:#fff;color:#000;font:11pt/1.25 'Times New Roman',serif;margin:16px auto;box-shadow:0 2px 12px #bbb;overflow:hidden}
+.cert-inner{height:100%;display:flex;flex-direction:column}
+.cert-inner>*{flex:0 0 auto}
+.cert-head{text-align:center}
+.cert-head img{height:18mm;max-width:35mm;object-fit:contain}
+.logo-space{height:18mm}
+.cert-head h2{font-size:18pt;margin:2.5mm 0}
+.cert-head h3{font-size:13pt;margin:1.5mm 0}
+.cert-head p{margin:1mm 0}
+.cert-meta{display:grid;grid-template-columns:1fr 1fr;gap:0 6mm;margin:3mm 0 0}
+.cert-row{display:flex;gap:3mm;align-items:baseline;margin:0 0 2mm}
+.cert-label{flex:0 0 60mm}
+.cert-meta .cert-label{flex:0 0 32mm}
+.cert-value{flex:1;min-width:0;border-bottom:1px dotted #444;white-space:pre-wrap;overflow-wrap:anywhere;padding:0 1mm;min-height:5mm}
+.cert-name{font-weight:bold;font-size:12pt}
+.cert-nilam{margin-top:2mm}
+.signatures{display:grid;grid-template-columns:1fr 1fr;gap:15mm;margin-top:auto;padding-top:14mm;text-align:center}
+.sign-line{border-top:1px dotted #333;padding-top:2mm;overflow-wrap:anywhere;white-space:pre-wrap}
+.cert-footer{display:grid;grid-template-columns:1fr 1fr;gap:15mm;align-items:end;margin-top:13mm}
+.cert-footer .sign-line{text-align:center}
+.certificate.invalid{outline:3px solid #c00}
+@media(max-width:700px){
+  main{padding:8px}
+  .page{padding:12px}
+  header,nav{padding:12px}
+  #certificates{overflow:auto}
+  .certificate{margin:10px 0}
+  .toolbar{align-items:stretch}
+}
+@page{size:A4 portrait;margin:0}
+@media print{
+  body{background:white;margin:0}
+  .no-print,header,nav,footer,#status{display:none!important}
+  main,.page{margin:0;padding:0;max-width:none;border:0;border-radius:0}
+  body.print-blocked main{display:none!important}
+  body.print-blocked:after{content:'Cetakan disekat: ada sijil melebihi satu muka A4.';display:block;padding:25mm}
+  #preview{display:block!important}
+  .page:not(#preview){display:none!important}
+  #certificates{overflow:visible}
+  .certificate{margin:0;box-shadow:none;break-inside:avoid;break-after:page;page-break-after:always;width:210mm;height:297mm}
+  .certificate:last-child{break-after:auto;page-break-after:auto}
+  .certificate.invalid{outline:0}
+}
+</style>
+</head>
+<body>
+
+<div id="login" hidden>
+  <form onsubmit="doLogin(event)">
+    <h1>Sijil Tamat Sekolah Rendah</h1>
+    <p>Masukkan kata laluan sistem.</p>
+    <label>Kata laluan
+      <input id="password" type="password" autocomplete="current-password" required>
+    </label>
+    <p id="loginError" role="alert"></p>
+    <button id="loginButton">Log masuk</button>
+  </form>
+</div>
+
+<header class="no-print">
+  <h1>Sijil Tamat Sekolah Rendah</h1>
+  <span id="school"></span>
+  <button onclick="refresh()">Muat semula</button>
+  <span class="spacer"></span>
+  <button class="ghost" onclick="logout()">Log keluar</button>
+</header>
+
+<nav class="no-print">
+  <button class="active" data-page="dashboard" onclick="show('dashboard')">Ringkasan</button>
+  <button data-page="import" onclick="show('import')">Import</button>
+  <button data-page="students" onclick="show('students')">Murid</button>
+  <button data-page="settings" onclick="show('settings')">Tetapan</button>
+  <button data-page="preview" onclick="show('preview')">Sijil</button>
+</nav>
+
+<p id="status" role="status" class="no-print">Memuatkan…</p>
+
+<main>
+
+<section id="dashboard" class="page no-print">
+  <h2>Ringkasan tahun <span id="activeYear"></span></h2>
+  <div id="stats" class="cards"></div>
+  
+  <details>
+    <summary>Log import terkini</summary>
+    <div id="logs" class="scroll"></div>
+  </details>
+</section>
+
+<section id="import" class="page no-print" hidden>
+  <h2>Import eksport IDME</h2>
+  <p>CSV (UTF-8), XLS atau XLSX; maksimum 10 MB.</p>
+
+  <label>Fail CSV / XLS / XLSX
+    <input type="file" id="file" accept=".csv,.xls,.xlsx">
+  </label>
+
+  <button onclick="upload()">1. Muat naik</button>
+
+  <details>
+    <summary>Pilihan lanjutan</summary>
+
+    <label>Pemisah CSV
+      <select id="delimiter">
+        <option value=",">Koma</option>
+        <option value=";">Koma bertitik</option>
+        <option value="tab">Tab</option>
+      </select>
+    </label>
+
+    <button type="button" class="ghost" onclick="clean()">Bersihkan fail sementara saya</button>
+  </details>
+
+  <div id="mappingArea" hidden>
+    <label>Jenis import
+      <select id="importMode" onchange="invalidateImport()">
+        <option value="idme">Eksport IDME (murid Tahun 6)</option>
+        <option value="tambahan">Maklumat kokurikulum tambahan (murid sedia ada)</option>
+      </select>
+    </label>
+
+    
+
+    <label>Tab fail
+      <select id="sheetSelect" onchange="inspect()"></select>
+    </label>
+
+    <label>Baris tajuk (bermula 1)
+      <input id="headerRow" type="number" min="1" onchange="mapping()">
+    </label>
+
+    <p>Semak pemetaan lajur. “Abaikan” = tidak diimport. Nilai kosong tidak memadam data sedia ada.</p>
+
+    <div id="mapping" class="form-grid"></div>
+
+    <details>
+      <summary>Lihat 40 baris pertama fail</summary>
+      <div id="raw" class="scroll"></div>
+    </details>
+
+    <button onclick="previewImportUI()">2. Semak rekod</button>
+  </div>
+
+  <div id="importPreview"></div>
+
+  <button id="commit" hidden onclick="commit()">3. Sahkan import rekod sah</button>
+  </section>
+
+<section id="students" class="page no-print" hidden>
+  <h2>Pengurusan murid</h2>
+
+  <div class="toolbar">
+    <label>Carian nama
+      <input id="search" oninput="renderStudents()">
+    </label>
+
+    <label>Kelas
+      <select id="classFilter" onchange="renderStudents()"></select>
+    </label>
+
+    <button onclick="selectVisible(true)">Pilih semua</button>
+    
+    <button class="ghost" onclick="selected.clear();renderStudents()">Nyahpilih semua</button>
+  </div>
+
+  <p id="selectionCount"></p>
+
+  <div class="toolbar">
+    <button onclick="printScope('selected')">Sijil pilihan</button>
+    <button class="ghost" onclick="printScope('class')">Sijil kelas</button>
+    <button class="ghost" onclick="printScope('all')">Sijil semua</button>
+    <button class="ghost" onclick="bulkForm()">Isi pukal</button>
+    <button class="ghost" onclick="saveSelection()">Simpan pilihan cetak</button>
+  </div>
+
+  <div id="studentTable" class="scroll"></div>
+  <div id="editor"></div>
+  <div id="bulk"></div>
+</section>
+
+<section id="settings" class="page no-print" hidden>
+  <h2>Tetapan sekolah</h2>
+  
+
+  <form id="settingsForm" onsubmit="saveSettingsUI(event)">
+    <div id="settingsFields" class="form-grid"></div>
+
+    <details>
+      <summary>Pilihan dropdown kokurikulum</summary>
+      <div id="settingsOptions" class="form-grid"></div>
+    </details>
+
+    <button>Simpan tetapan</button>
+  </form>
+</section>
+
+<section id="preview" class="page" hidden>
+  <div class="no-print">
+    <div class="toolbar">
+      <button onclick="doPrint()">Cetak / Simpan PDF</button>
+      <span>A4 menegak, skala 100%, tanpa margin.</span>
+    </div>
+
+    <details id="printIssues" hidden>
+      <summary id="printSummary"></summary>
+      <p id="printWarnings" role="alert"></p>
+    </details>
+  </div>
+
+  <div id="certificates"></div>
+</section>
+
+</main>
+
+<footer class="no-print">
+  Data murid sulit — log keluar selepas digunakan.
+</footer>
+
+<script>
+// URL deployment Web App Apps Script (Execute as: Me, Who has access: Anyone).
+const API_URL = 'https://script.google.com/macros/s/AKfycbz1c6VDEDyC6Nu90EuQQEgT6TGvONHyLdH3B0f2KnALhSmE73wnLZ70bUbCEjslw-LAoA/exec';
+const TOKEN_KEY = 'sijil_token';
+
+function getToken() {
+  try { return sessionStorage.getItem(TOKEN_KEY) || ''; } catch(e) { return ''; }
+}
+
+function setToken(t) {
+  try {
+    if (t) sessionStorage.setItem(TOKEN_KEY,t);
+    else sessionStorage.removeItem(TOKEN_KEY);
+  } catch(e) {}
+}
+
+async function api(action,args,extra) {
+  let res;
+
+  try {
+    res = await fetch(API_URL,{
+      method:'POST',
+      body:JSON.stringify(Object.assign({action:action,token:getToken(),args:args||[]},extra||{}))
+    });
+  } catch(e) {
+    throw Error('Pelayan tidak dapat dihubungi. Semak sambungan internet.');
+  }
+
+  let j;
+
+  try {
+    j = await res.json();
+  } catch(e) {
+    throw Error('Jawapan pelayan tidak sah (' + res.status + '). Semak URL Web App.');
+  }
+
+  if (!j.ok) {
+    if (j.code === 'AUTH' && action !== 'login') {
+      setToken('');
+      showLogin(j.error);
+    }
+
+    throw Error(j.error || 'Ralat pelayan');
+  }
+
+  return j.data;
+}
+
+function showLogin(msg) {
+  $('login').hidden = false;
+  $('loginError').textContent = msg || '';
+  $('password').value = '';
+  setTimeout(() => $('password').focus(),0);
+}
+
+async function doLogin(event) {
+  event.preventDefault();
+
+  $('loginButton').disabled = true;
+  $('loginError').textContent = 'Menyemak…';
+
+  try {
+    const r = await api('login',[],{password:$('password').value});
+
+    setToken(r.token);
+    $('password').value = '';
+    $('login').hidden = true;
+    $('loginError').textContent = '';
+    await refresh();
+  } catch(e) {
+    $('loginError').textContent = e.message;
+  } finally {
+    $('loginButton').disabled = false;
+  }
+}
+
+async function logout() {
+  try { await api('logout'); } catch(e) {}
+
+  setToken('');
+  state = null;
+  $('studentTable').innerHTML = '';
+  $('certificates').innerHTML = '';
+  showLogin('Anda telah log keluar.');
+}
+
+function esc(v) {
+  return String(v == null ? '' : v).replace(
+    /[&<>"']/g,
+    c => ({
+      '&':'&amp;',
+      '<':'&lt;',
+      '>':'&gt;',
+      '"':'&quot;',
+      "'":'&#39;'
+    }[c])
+  );
+}
+
+function displayDate(v) {
+  const m = String(v || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  return m ? m[3]+'/'+m[2]+'/'+m[1] : v || '';
+}
+
+function nilamLabel(v,threshold) {
+  if (v === '') return 'Belum diisi';
+
+  const n = threshold.split(',')
+    .map(Number)
+    .filter(x => Number(v) >= x)
+    .length;
+
+  return n ? n+' bintang' : 'Belum mencapai 1 bintang';
+}
+
+function certRow(label,value,cls) {
+  return '<div class="cert-row">' +
+    '<span class="cert-label">'+esc(label)+'</span>' +
+    '<span class="cert-value '+(cls || '')+'">'+
+    esc(value)+'</span></div>';
+}
+
+function certificateHTML(r,s,logo) {
+  return '<article class="certificate"><div class="cert-inner">' +
+    '<div class="cert-head">' +
+    (logo
+      ? '<img alt="Jata Kementerian Pendidikan Malaysia" src="'+esc(logo)+'">'
+      : '<div class="logo-space"></div>') +
+    '<h3>KEMENTERIAN PENDIDIKAN MALAYSIA</h3>' +
+    '<h2>SIJIL TAMAT SEKOLAH RENDAH</h2>' +
+    '<h3>'+esc(s.namaSekolah)+'</h3>' +
+    '<p>'+esc(s.negeri)+'</p></div>' +
+
+    '<div class="cert-meta"><div>' +
+    certRow('No. pendaftaran',r.daftar) +
+    '</div><div>' +
+    certRow('Tarikh masuk',displayDate(r.masuk)) +
+    '</div></div>' +
+
+    certRow('Nama murid',r.nama,'cert-name') +
+    certRow('Tarikh lahir',displayDate(r.lahir)) +
+    certRow('Kelas yang terakhir',r.kelas) +
+    certRow('Tahun',r.tahun) +
+    certRow('Tarikh tamat sekolah',displayDate(r.tamat)) +
+    certRow('Pencapaian akademik',r.akademik) +
+    certRow('Sikap dan tanggungjawab',r.sikap) +
+    certRow('Rumah sukan',r.rumahSukan) +
+    certRow('Kelab / persatuan',r.kelab) +
+    certRow('Badan beruniform',r.uniform) +
+    certRow('Sukan / permainan',r.sukan) +
+    certRow('Kebolehan / pencapaian kokurikulum',r.kokurikulum) +
+    certRow('Kelakuan',r.kelakuan) +
+
+    '<div class="cert-nilam">' +
+    '<strong>PROGRAM BACAAN NILAM</strong>' +
+    certRow('Bilangan buku NILAM',r.nilam) +
+    certRow(
+      'Pengiktirafan bintang NILAM',
+      nilamLabel(r.nilam,s.ambangNilam)
+    ) +
+    '</div>' +
+
+    '<div class="signatures">' +
+    '<div class="sign-line">Tandatangan guru kelas<br>'+
+    esc(r.guruKelas)+'</div>' +
+    '<div class="sign-line">Tandatangan murid</div>' +
+    '</div>' +
+
+    '<div class="cert-footer">' +
+    '<div>Tarikh dikeluarkan: '+esc(displayDate(s.tarikhKeluar))+
+    '</div>' +
+    '<div class="sign-line">Tandatangan Guru Besar<br>'+
+    esc(s.guruBesar)+'</div>' +
+    '</div></div></article>';
+}
+
+let state;
+let selected = new Set();
+let visible = [];
+let uploadSession = null;
+let inspection = null;
+let printRecords = [];
+let busy = 0;
+let bulkDraft = null;
+let printBlocked = false;
+
+const $ = id => document.getElementById(id);
+
+function status(msg,error=false) {
+  $('status').textContent = msg;
+  $('status').style.borderColor = error ? '#b42318' : '#17677d';
+}
+
+function rpc(name,...args) {
+  busy++;
+
+  document.querySelectorAll('button')
+    .forEach(b => b.disabled = true);
+
+  return api(name,args).finally(() => {
+    if (!--busy) {
+      document.querySelectorAll('button')
+        .forEach(b => b.disabled = false);
+    }
+  });
+}
+
+async function run(fn) {
+  try {
+    await fn();
+  } catch(e) {
+    status(e.message,true);
+  }
+}
+
+function show(id) {
+  document.querySelectorAll('.page')
+    .forEach(x => x.hidden = x.id !== id);
+
+  document.querySelectorAll('nav button')
+    .forEach(b => b.classList.toggle('active',b.dataset.page === id));
+
+  // Buang mesej lama apabila bertukar halaman.
+  status('');
+}
+
+function table(headers,rows) {
+  return '<table><thead><tr>' +
+    headers.map(h => '<th>'+esc(h)+'</th>').join('') +
+    '</tr></thead><tbody>' +
+    rows.map(r =>
+      '<tr>' +
+      r.map(v => '<td>'+esc(v)+'</td>').join('') +
+      '</tr>'
+    ).join('') +
+    '</tbody></table>';
+}
+
+async function refresh() {
+  if (!getToken()) return showLogin();
+
+  return run(async () => {
+    status('Memuatkan data…');
+
+    state = await rpc('getState');
+
+    selected = new Set(
+      state.students
+        .filter(r => r.cetak === 'TRUE')
+        .map(r => r.id)
+    );
+
+    $('school').textContent = state.settings.namaSekolah;
+    $('activeYear').textContent = state.settings.tahunSijil;
+
+    const s = state.summary;
+
+    $('stats').innerHTML = [
+      ['Murid Tahun 6',s.jumlah],
+      ['Kelas',s.kelas],
+      ['Rekod belum lengkap',s.belumLengkap],
+      ['NILAM diisi',s.nilamDiisi+' / '+s.jumlah]
+    ].map(x =>
+      '<div class="card">'+esc(x[0])+
+      '<strong>'+esc(x[1])+'</strong></div>'
+    ).join('');
+
+    $('logs').innerHTML = table(
+      ['Masa','Fail','Sumber','Tahun 6','Baharu','Kemas kini','Bermasalah'],
+      state.logs
+        .filter(r => r[0] !== 'Masa import')
+        .map(r => r.slice(0,7))
+    );
+
+    $('classFilter').innerHTML =
+      '<option value="">Semua kelas</option>' +
+      [...new Set(state.students.map(r => r.kelas))]
+        .sort()
+        .map(c => '<option>'+esc(c)+'</option>')
+        .join('');
+
+    renderStudents();
+    renderSettings();
+
+    $('editor').innerHTML = '';
+    $('bulk').innerHTML = '';
+    printRecords = [];
+    $('certificates').innerHTML = '';
+
+    status(
+      state.logoError ||
+      'Data dimuatkan. Tahun sijil aktif: '+state.settings.tahunSijil,
+      !!state.logoError
+    );
+  });
+}
+
+function renderStudents() {
+  if (!state) return;
+
+  const q = $('search').value.toLocaleLowerCase();
+  const c = $('classFilter').value;
+
+  visible = state.students.map((r,i) => i).filter(i => {
+    const r = state.students[i];
+
+    return r.nama.toLocaleLowerCase().includes(q) &&
+      (!c || r.kelas === c);
+  });
+
+  $('selectionCount').textContent =
+    selected.size+' murid dipilih; '+
+    visible.length+' rekod dalam hasil carian.';
+
+  $('studentTable').innerHTML =
+    '<table><thead><tr>' +
+    '<th>Pilih</th><th>Nama</th><th>No. pengenalan</th>' +
+    '<th>Kelas</th><th>Keahlian kokurikulum</th>' +
+    '<th>NILAM</th><th>Tindakan</th>' +
+    '</tr></thead><tbody>' +
+
+    visible.map(i => {
+      const r = state.students[i];
+
+      return '<tr><td>' +
+        '<input aria-label="Pilih murid '+esc(r.nama)+'" '+
+        'type="checkbox" '+(selected.has(r.id) ? 'checked' : '')+
+        ' onchange="toggle('+i+',this.checked)">' +
+        '</td><td>'+esc(r.nama)+'</td>' +
+        '<td>'+esc(r.pengenalan)+'</td>' +
+        '<td>'+esc(r.kelas)+'</td><td>' +
+        esc(kokoFields.map(f => r[f]).filter(Boolean).join('\n')) +
+        '</td><td>' +
+        esc(
+          r.nilam === ''
+            ? 'Belum diisi'
+            : r.nilam+' buku — '+
+              nilamLabel(r.nilam,state.settings.ambangNilam)
+        ) +
+        '</td><td>' +
+        '<button onclick="edit('+i+')">Sunting</button>' +
+        '<button onclick="printOne('+i+')">Sijil</button>' +
+        '</td></tr>';
+    }).join('') +
+
+    '</tbody></table>';
+}
+
+function toggle(i,on) {
+  if (on) {
+    selected.add(state.students[i].id);
+  } else {
+    selected.delete(state.students[i].id);
+  }
+
+  $('selectionCount').textContent =
+    selected.size+' murid dipilih; '+
+    visible.length+' rekod dalam hasil carian.';
+}
+
+function selectVisible(on) {
+  visible.forEach(i => toggle(i,on));
+  renderStudents();
+}
+
+const editFields = [
+  'nama','pengenalan','kelas','lahir',
+  'daftar','masuk','tamat','akademik','sikap',
+  'rumahSukan','kelab','uniform','sukan',
+  'kokurikulum','kelakuan','nilam','guruKelas'
+];
+
+// Susunan borang sunting: maklumat asas, keahlian, kemudian ulasan.
+const editGroups = [
+  [
+    'Maklumat murid',
+    [
+      'nama','pengenalan','kelas','lahir',
+      'daftar','masuk','tamat','guruKelas','nilam'
+    ],
+    'form-grid'
+  ],
+  [
+    'Keahlian kokurikulum',
+    ['rumahSukan','kelab','uniform','sukan'],
+    'form-grid'
+  ],
+  [
+    'Ulasan',
+    ['akademik','sikap','kokurikulum','kelakuan'],
+    'form-grid wide'
+  ]
+];
+
+const commentFields = [
+  'akademik','sikap','kokurikulum','kelakuan','guruKelas'
+];
+
+// Maklumat keahlian kokurikulum: pilihan dropdown diurus dalam tetapan.
+const kokoFields = ['rumahSukan','kelab','uniform','sukan'];
+
+const kokoSetting = {
+  rumahSukan:'pilihanRumahSukan',
+  kelab:'pilihanKelab',
+  uniform:'pilihanUniform',
+  sukan:'pilihanSukan'
+};
+
+const bulkFields = [...kokoFields,...commentFields];
+
+function kokoOptions(f) {
+  return String(state.settings[kokoSetting[f]] || '')
+    .split(/\r?\n/)
+    .map(x => x.trim())
+    .filter(Boolean);
+}
+
+function kokoControl(f,v,prefix) {
+  const opts = kokoOptions(f);
+  const cur = String(v || '');
+
+  if (!opts.length) {
+    return '<label>'+esc(state.labels[f]) +
+      '<input id="'+prefix+f+'" type="text" maxlength="120" value="'+
+      esc(cur)+'"></label>';
+  }
+
+  // Kekalkan nilai sedia ada (cth. daripada import) walaupun tiada dalam senarai.
+  if (cur && !opts.includes(cur)) opts.unshift(cur);
+
+  return '<label>'+esc(state.labels[f]) +
+    '<select id="'+prefix+f+'">' +
+    '<option value="">— Tiada / belum diisi —</option>' +
+    opts.map(o =>
+      '<option value="'+esc(o)+'" '+
+      (o === cur ? 'selected' : '')+'>'+esc(o)+'</option>'
+    ).join('') +
+    '</select></label>';
+}
+
+function control(f,v,prefix) {
+  if (kokoFields.includes(f)) return kokoControl(f,v,prefix);
+
+  const type = ['lahir','masuk','tamat'].includes(f)
+    ? 'date'
+    : f === 'nilam' ? 'number' : 'text';
+
+  return '<label>'+esc(state.labels[f]) +
+    (
+      commentFields.includes(f) && f !== 'guruKelas'
+        ? '<textarea id="'+prefix+f+'" maxlength="'+
+          (f === 'kelakuan' ? 180 : 300)+
+          '" rows="2">'+esc(v)+'</textarea>'
+        : '<input id="'+prefix+f+'" type="'+type+'" '+
+          (f === 'nilam' ? 'min="0" step="1"' : '')+
+          ' value="'+esc(v)+'">'
+    ) +
+    '</label>';
+}
+
+function edit(i) {
+  const r = state.students[i];
+
+  $('editor').innerHTML =
+    '<h3>Sunting '+esc(r.nama)+'</h3>' +
+    '<small>ID import: '+esc(r.id)+'</small>' +
+    '<form onsubmit="saveEdit(event,'+i+')">' +
+    editGroups.map(g =>
+      '<h4>'+esc(g[0])+'</h4><div class="'+g[2]+'">' +
+      g[1].map(f => control(f,r[f],'e_')).join('') +
+      '</div>'
+    ).join('') +
+    '<div class="actions"><button>Simpan murid</button>' +
+    '<button type="button" class="ghost" onclick="document.getElementById(\'editor\').innerHTML=\'\'">Tutup</button></div>' +
+    '</form>';
+
+  $('editor').scrollIntoView({behavior:'smooth'});
+}
+
+async function saveEdit(event,i) {
+  event.preventDefault();
+
+  run(async () => {
+    const r = state.students[i];
+    const patch = {};
+
+    editFields.forEach(f => patch[f] = $('e_'+f).value);
+
+    await rpc('updateStudents',[{
+      id:r.id,
+      tahun:r.tahun,
+      version:r.kemasKini,
+      patch:patch
+    }]);
+
+    await refresh();
+    status('Maklumat murid disimpan.');
+  });
+}
+
+function chosen() {
+  return state.students.filter(r => selected.has(r.id));
+}
+
+function bulkForm() {
+  if (!chosen().length) {
+    return status('Pilih murid dahulu',true);
+  }
+
+  bulkDraft = null;
+
+  $('bulk').innerHTML =
+    '<h3>Isian pukal — '+chosen().length+' murid</h3>' +
+    '<p>Hanya medan bertanda akan ditulis, termasuk nilai kosong. Semak pratonton sebelum simpan.</p>' +
+    '<div class="form-grid">' +
+    bulkFields.map(f =>
+      '<div><label>' +
+      '<input style="width:auto" id="b_use_'+f+'" type="checkbox">' +
+      ' Gunakan '+esc(state.labels[f])+'</label>' +
+      control(f,'','b_')+'</div>'
+    ).join('') +
+    '</div>' +
+    '<button onclick="previewBulk()">Semak perubahan pukal</button>' +
+    '<div id="bulkPreview"></div>';
+
+  $('bulk').scrollIntoView({behavior:'smooth'});
+}
+
+function previewBulk() {
+  const patch = {};
+
+  bulkFields.forEach(f => {
+    if ($('b_use_'+f).checked) {
+      patch[f] = $('b_'+f).value;
+    }
+  });
+
+  if (!Object.keys(patch).length) {
+    return status('Tandakan sekurang-kurangnya satu medan',true);
+  }
+
+  bulkDraft = chosen().map(r => ({
+    id:r.id,
+    tahun:r.tahun,
+    version:r.kemasKini,
+    patch:{...patch}
+  }));
+
+  $('bulkPreview').innerHTML = table(
+    ['Nama','Medan','Sebelum','Selepas'],
+    chosen().flatMap(r =>
+      Object.keys(patch).map(f => [
+        r.nama,state.labels[f],r[f],patch[f]
+      ])
+    )
+  ) +
+  '<button onclick="saveBulk()">Sahkan simpan pratonton ini</button>';
+}
+
+async function saveBulk() {
+  run(async () => {
+    if (!bulkDraft) throw Error('Semak pratonton dahulu');
+
+    await rpc('updateStudents',bulkDraft);
+    await refresh();
+
+    status('Isian pukal disimpan.');
+  });
+}
+
+function saveSelection() {
+  run(async () => {
+    const items = state.students
+      .filter(r => (r.cetak === 'TRUE') !== selected.has(r.id))
+      .map(r => ({
+        id:r.id,
+        tahun:r.tahun,
+        version:r.kemasKini,
+        patch:{cetak:selected.has(r.id) ? 'TRUE' : 'FALSE'}
+      }));
+
+    if (items.length) {
+      await rpc('updateStudents',items);
+    }
+
+    await refresh();
+    status('Pilihan cetak disimpan.');
+  });
+}
+
+const settingLabels = {
+  namaSekolah:'Nama sekolah',
+  negeri:'Negeri',
+  kodSekolah:'Kod sekolah',
+  tahunSijil:'Tahun sijil',
+  tarikhTamat:'Tarikh tamat sekolah',
+  tarikhKeluar:'Tarikh sijil dikeluarkan',
+  guruBesar:'Nama Guru Besar',
+  ambangNilam:'Ambang bintang NILAM (5 nilai, koma)',
+  pilihanRumahSukan:'Pilihan rumah sukan (satu setiap baris)',
+  pilihanKelab:'Pilihan kelab / persatuan (satu setiap baris)',
+  pilihanUniform:'Pilihan badan beruniform (satu setiap baris)',
+  pilihanSukan:'Pilihan sukan / permainan (satu setiap baris)'
+};
+
+function renderSettings() {
+  const field = k =>
+      '<label>'+esc(settingLabels[k]) +
+      (k.startsWith('pilihan')
+        ? '<textarea id="s_'+k+'" rows="6" maxlength="8000">'+
+          esc(state.settings[k])+'</textarea></label>'
+        : '<input id="s_'+k+'" type="'+
+      (k.startsWith('tarikh') ? 'date' : 'text')+
+      '" value="'+esc(state.settings[k])+'"></label>');
+
+  const keys = Object.keys(settingLabels);
+
+  $('settingsFields').innerHTML = keys
+    .filter(k => !k.startsWith('pilihan'))
+    .map(field).join('');
+
+  $('settingsOptions').innerHTML = keys
+    .filter(k => k.startsWith('pilihan'))
+    .map(field).join('');
+}
+
+function saveSettingsUI(event) {
+  event.preventDefault();
+
+  run(async () => {
+    const data = {};
+
+    Object.keys(settingLabels).forEach(k => {
+      data[k] = $('s_'+k).value;
+    });
+
+    await rpc('saveSettings',data);
+    await refresh();
+
+    status('Tetapan disimpan.');
+  });
+}
+
+function upload() {
+  run(async () => {
+    const file = $('file').files[0];
+
+    if (!file) throw Error('Pilih fail eksport');
+
+    if (file.size > 10000000) {
+      throw Error('Had fail 10 MB');
+    }
+
+    $('commit').hidden = true;
+    $('importPreview').innerHTML = '';
+
+    const base64 = await new Promise((resolve,reject) => {
+      const reader = new FileReader();
+
+      reader.onload = () => resolve(reader.result.split(',')[1]);
+      reader.onerror = () => reject(Error('Fail tidak dapat dibaca'));
+      reader.readAsDataURL(file);
+    });
+
+    status('Memuat naik fail…');
+
+    uploadSession = await rpc('uploadImport',{
+      name:file.name,
+      base64:base64,
+      delimiter:$('delimiter').value === 'tab'
+        ? '\t'
+        : $('delimiter').value
+    });
+
+    $('sheetSelect').innerHTML =
+      uploadSession.sheets.map(s =>
+        '<option value="'+esc(s.id)+'">'+
+        esc(s.name)+' ('+s.rows+' baris)</option>'
+      ).join('');
+
+    $('mappingArea').hidden = false;
+
+    await inspect();
+  });
+}
+
+async function inspect() {
+  return run(async () => {
+    if (!uploadSession) return;
+
+    $('commit').hidden = true;
+    $('importPreview').innerHTML = '';
+
+    inspection = await rpc(
+      'inspectImport',
+      uploadSession.token,
+      $('sheetSelect').value
+    );
+
+    $('headerRow').value = inspection.proposal.row+1;
+    $('headerRow').max = inspection.rows.length;
+
+    $('raw').innerHTML = table(
+      [
+        'Baris',
+        ...Array.from(
+          {length:Math.max(...inspection.rows.map(r => r.length))},
+          (_,i) => 'Lajur '+(i+1)
+        )
+      ],
+      inspection.rows.map((r,i) => [i+1,...r])
+    );
+
+    mapping(inspection.proposal.map);
+
+    status('Tab dibaca. Semak pemetaan yang dicadangkan.');
+  });
+}
+
+function mapping(proposed={}) {
+  $('commit').hidden = true;
+  $('importPreview').innerHTML = '';
+
+  const row = inspection.rows[Number($('headerRow').value)-1];
+
+  if (!row) {
+    return status('Baris tajuk mesti dalam 40 baris pertama',true);
+  }
+
+  $('mapping').innerHTML = [
+    'sourceId','nama','pengenalan','darjah','kelas',
+    'lahir','daftar','masuk',
+    'rumahSukan','kelab','uniform','sukan'
+  ].map(f =>
+    '<label>'+esc(state.labels[f]) +
+    '<select id="m_'+f+'" onchange="invalidateImport()">' +
+    '<option value="">Abaikan</option>' +
+    row.map((h,i) =>
+      '<option value="'+i+'" '+
+      (proposed[f] === i ? 'selected' : '')+'>'+
+      (i+1)+': '+esc(h)+'</option>'
+    ).join('') +
+    '</select></label>'
+  ).join('');
+}
+
+function invalidateImport() {
+  $('commit').hidden = true;
+  $('importPreview').innerHTML = 'Pemetaan berubah; semak semula.';
+}
+
+function previewImportUI() {
+  run(async () => {
+    const map = {};
+
+    document.querySelectorAll('#mapping select').forEach(e => {
+      if (e.value !== '') {
+        map[e.id.slice(2)] = Number(e.value);
+      }
+    });
+
+    const result = await rpc(
+      'previewImport',
+      uploadSession.token,
+      $('sheetSelect').value,
+      Number($('headerRow').value)-1,
+      map,
+      $('importMode').value
+    );
+
+    $('importPreview').innerHTML =
+      '<h3>Semakan import tahun '+esc(result.year)+'</h3>' +
+      '<p>Sumber: '+result.source+
+      ' rekod; Tahun 6: '+result.six+
+      '; boleh diimport: '+result.valid+
+      '; bermasalah: '+result.issues.length+
+      '. Rekod bermasalah akan dilangkau.</p>' +
+
+      table(
+        ['Baris','Masalah'],
+        result.issues.map(x => [x.baris,x.sebab])
+      ) +
+
+      '<h4>Pratonton 20 rekod sah pertama</h4>' +
+
+      table(
+        [
+          'ID','Nama','Pengenalan','Kelas','Tarikh lahir',
+          'Rumah sukan','Kelab / persatuan',
+          'Badan beruniform','Sukan / permainan'
+        ],
+        result.records.map(r => [
+          r.id,r.nama || r.padan,r.pengenalan,r.kelas,r.lahir,
+          r.rumahSukan,r.kelab,r.uniform,r.sukan
+        ])
+      );
+
+    $('commit').hidden = !result.valid;
+
+    status('Pratonton sedia. Semak jumlah dan masalah sebelum mengesahkan.');
+  });
+}
+
+function commit() {
+  run(async () => {
+    const r = await rpc('commitImport',uploadSession.token);
+
+    $('commit').hidden = true;
+    await refresh();
+
+    status(
+      'Import selesai. Baharu: '+r.added+
+      '; dikemas kini: '+r.updated+
+      '; bermasalah: '+r.issues.length+'.'
+    );
+  });
+}
+
+function clean() {
+  run(async () => {
+    status(await rpc('cleanupImports'));
+
+    uploadSession = null;
+    $('mappingArea').hidden = true;
+    $('commit').hidden = true;
+    $('importPreview').innerHTML = '';
+  });
+}
+
+function printOne(i) {
+  renderCertificates([state.students[i]]);
+}
+
+function printScope(scope) {
+  const rows = scope === 'all'
+    ? state.students
+    : scope === 'selected'
+      ? chosen()
+      : state.students.filter(
+          r => r.kelas === $('classFilter').value
+        );
+
+  if (scope === 'class' && !$('classFilter').value) {
+    return status('Pilih kelas dahulu',true);
+  }
+
+  renderCertificates(rows);
+}
+
+function renderCertificates(rows) {
+  if (!rows.length) {
+    return status('Tiada murid dipilih',true);
+  }
+
+  printRecords = rows;
+
+  $('certificates').innerHTML = rows.map(
+    r => certificateHTML(r,state.settings,state.logo)
+  ).join('');
+
+  show('preview');
+  requestAnimationFrame(checkPrint);
+}
+
+function checkPrint() {
+  const warnings = [];
+  let blocked = false;
+
+  const required = [
+    'nama','pengenalan','kelas','lahir',
+    'daftar','masuk','tamat','akademik','sikap',
+    'kokurikulum','kelakuan','nilam','guruKelas'
+  ];
+
+  if (!printRecords.length) {
+    warnings.push('Pilih murid untuk pratonton.');
+  }
+
+  [
+    'namaSekolah','negeri','kodSekolah',
+    'tarikhKeluar','guruBesar'
+  ].forEach(k => {
+    if (!state.settings[k]) {
+      warnings.push('Tetapan belum lengkap: '+settingLabels[k]);
+    }
+  });
+
+  if (state.logoError) {
+    warnings.push(state.logoError);
+  }
+
+  document.querySelectorAll('.certificate').forEach((el,i) => {
+    const r = printRecords[i];
+
+    const missing = required.filter(
+      f => String(r[f] || '').trim() === ''
+    );
+
+    if (missing.length) {
+      warnings.push(
+        r.nama+': belum lengkap — '+
+        missing.map(f => state.labels[f]).join(', ')
+      );
+    }
+
+    const inner = el.querySelector('.cert-inner');
+
+    const over =
+      inner.scrollHeight > inner.clientHeight+1 ||
+      inner.scrollWidth > inner.clientWidth+1;
+
+    el.classList.toggle('invalid',over);
+
+    // Hanya sijil yang melebihi satu muka A4 menyekat cetakan.
+    if (over) blocked = true;
+
+    if (over) {
+      warnings.push(
+        r.nama+
+        ': kandungan melebihi ruang A4. '+
+        'Pendekkan nama paparan / ulasan secara wajar; '+
+        'tulisan tidak dikecilkan.'
+      );
+    }
+  });
+
+  $('printWarnings').textContent = warnings.join('\n');
+
+  // Senarai penuh disorok; hanya ringkasan satu baris dipaparkan.
+  $('printIssues').hidden = !warnings.length;
+  $('printSummary').textContent =
+    warnings.length+' perkara belum lengkap — klik untuk lihat';
+
+  document.body.classList.toggle(
+    'print-blocked',
+    blocked
+  );
+
+  printBlocked = blocked;
+
+  return warnings;
+}
+
+async function doPrint() {
+  const imgs = [
+    ...document.querySelectorAll('#certificates img')
+  ];
+
+  await Promise.all(imgs.map(img =>
+    img.complete
+      ? Promise.resolve()
+      : new Promise(resolve => {
+          img.onload = resolve;
+          img.onerror = resolve;
+        })
+  ));
+
+  checkPrint();
+
+  if (printBlocked) {
+    $('printIssues').open = true;
+
+    return status(
+      'Cetakan disekat: ada sijil melebihi satu muka A4. Pendekkan ulasan.',
+      true
+    );
+  }
+
+  window.print();
+}
+
+window.addEventListener('beforeprint',() => {
+  if (state) checkPrint();
+});
+
+if (getToken()) refresh();
+else showLogin();
+</script>
+</body>
+</html>
